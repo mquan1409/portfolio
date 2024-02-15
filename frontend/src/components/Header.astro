@@ -1,0 +1,112 @@
+---
+import ThemeIcon from './ThemeIcon.astro';
+import Menu from './Menu.astro';
+import HeaderLink from './HeaderLink.astro';
+import Navigation from './Navigation.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header id="header">
+	<nav class="nav-links">
+    <Menu />
+    <div class="internal-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/experience">Experience</HeaderLink>
+      <HeaderLink href="/projects">Project</HeaderLink>
+      <HeaderLink href="/publications">Publication</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+    <ThemeIcon />
+	</nav>
+	<nav class="nav-links">
+    <div class="scroll-internal-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/experience">Experience</HeaderLink>
+      <HeaderLink href="/projects">Project</HeaderLink>
+      <HeaderLink href="/publications">Publication</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+  </nav>
+</header>
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+  nav #themeToggle {
+    margin-left: auto;
+  }
+  nav .menu {
+    display: none;
+  }
+	nav a {
+		padding: 1em 0.5em;
+		color: rgb(15, 18, 25);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+  :global(.dark) nav a {
+    color: #fff;
+  }
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: #2337ff;
+	}
+  .internal-links a {
+    display: inline-block;
+  }
+  .scroll-internal-links a {
+    display: block;
+    margin: auto;
+  }
+	:global(.dark) nav a.active {
+		border-bottom-color: #fff;
+	}
+  .scroll-internal-links{
+    width: 100%;
+    display: none;
+  }
+  .scroll-internal-links a {
+    display: none;
+    text-align: center;
+  }
+  .scroll-internal-links.show {
+    display: block;
+  }
+  .scroll-internal-links.show a {
+    display: block;
+  }
+	@media (max-width: 720px) {
+    .internal-links {
+      display: none;
+    }
+    nav .menu {
+      display: inline-block;
+    }
+	}
+</style>
+<script>
+  document.querySelector('.menu').addEventListener('click', () => {
+    document.querySelector('.scroll-internal-links').classList.toggle('show');
+  });
+</script>

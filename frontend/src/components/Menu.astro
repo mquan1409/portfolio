@@ -1,0 +1,26 @@
+---
+const { ...props } = Astro.props;
+---
+<div class="menu" { ...props }>
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+<style>
+
+.menu {
+  padding: 20px 0px 10px 0px;
+  cursor: pointer;
+}
+
+.menu .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #ff9776;
+}
+:global(.dark) .line {
+  background-color: #663c2f;
+}
+<style/>
