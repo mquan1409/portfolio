@@ -106,7 +106,13 @@ import { SITE_TITLE } from '../consts';
 	}
 </style>
 <script>
-  document.querySelector('.menu').addEventListener('click', () => {
-    document.querySelector('.scroll-internal-links').classList.toggle('show');
-  });
+  let menu = document.querySelector('.menu');
+  if (menu !== null){
+    menu.addEventListener('click', () => {
+      let menuLinks = document.querySelector('.scroll-internal-links');
+      if (menuLinks !== null){
+        menuLinks.classList.toggle('show');
+      }
+    });
+  };
 </script>
