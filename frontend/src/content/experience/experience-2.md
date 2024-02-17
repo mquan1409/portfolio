@@ -1,7 +1,7 @@
 ---
 title: 'Front-end Web Developer'
 description: 'Provided more interactive feature for a homework website for electrical engineering students'
-pubDate: 'Jul 08 2022'
+pubDate: 'Jan 06 2022'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 

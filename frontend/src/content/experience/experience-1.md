@@ -1,7 +1,7 @@
 ---
 title: 'Learning Assistant'
 description: 'Represent the instructor during weekly office hours to help students reconsolidate their programming knowledge and make progress in the assignments'
-pubDate: 'Jul 08 2022'
+pubDate: 'Aug 22 2022'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 

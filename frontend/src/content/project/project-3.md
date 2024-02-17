@@ -1,7 +1,7 @@
 ---
 title: 'ToDoList Windows Application'
 description: 'A Windows ToDoList App'
-pubDate: 'Jul 08 2022'
+pubDate: 'Jan 06 2022'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 

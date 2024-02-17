@@ -1,7 +1,7 @@
 ---
 title: 'Fitness Tracking Web App'
 description: 'A Web App that allows users to shedule their workout sessions'
-pubDate: 'Jul 08 2022'
+pubDate: 'Feb 01 2023'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 

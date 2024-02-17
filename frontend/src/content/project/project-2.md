@@ -1,7 +1,7 @@
 ---
 title: 'Shell Application'
 description: 'A bash-like shell'
-pubDate: 'Jul 08 2022'
+pubDate: 'Aug 20 2022'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 

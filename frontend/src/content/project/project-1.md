@@ -1,7 +1,7 @@
 ---
 title: 'Newsletter Web App'
 description: 'A web app that shows news articles from HackerNews API'
-pubDate: 'Jul 08 2022'
+pubDate: 'Aug 22 2022'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 

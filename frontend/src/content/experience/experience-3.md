@@ -1,7 +1,7 @@
 ---
 title: 'Research Assistant'
 description: 'Implement Vectorized Instruction Space (VIS), and implement optimization techniques for SPARC Assembly'
-pubDate: 'Jul 08 2022'
+pubDate: 'May 06 2023'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 
