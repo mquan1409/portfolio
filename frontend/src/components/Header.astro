@@ -12,7 +12,7 @@ import HeaderLink from './HeaderLink.astro';
       <HeaderLink href="/experience">Experience</HeaderLink>
       <HeaderLink href="/project">Project</HeaderLink>
       <HeaderLink href="/publication">Publication</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <a href="/QuanPham_Resume.pdf" download="QuanPham_Resume.pdf">Resume</a>
     </div>
     <ThemeIcon />
 	</nav>
@@ -22,14 +22,13 @@ import HeaderLink from './HeaderLink.astro';
       <HeaderLink href="/experience">Experience</HeaderLink>
       <HeaderLink href="/project">Project</HeaderLink>
       <HeaderLink href="/publication">Publication</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <a href="/QuanPham_Resume.pdf" download="QuanPham_Resume.pdf">Resume</a>
     </div>
   </nav>
 </header>
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
@@ -58,11 +57,14 @@ import HeaderLink from './HeaderLink.astro';
     display: none;
   }
 	nav a {
-		padding: 1em 0.5em;
+		padding: 1rem 0.5rem;
 		color: rgb(15, 18, 25);
+    text-align: center;
 		border-bottom: 4px solid transparent;
-		text-decoration: none;
 	}
+  nav a:hover {
+    border-bottom-color: #8a9dff;
+  }
   :global(.dark) nav a {
     color: #fff;
   }
@@ -73,10 +75,6 @@ import HeaderLink from './HeaderLink.astro';
   .internal-links a {
     display: inline-block;
   }
-  .scroll-internal-links a {
-    display: block;
-    margin: auto;
-  }
 	:global(.dark) nav a.active {
 		border-bottom-color: #fff;
 	}
@@ -86,13 +84,12 @@ import HeaderLink from './HeaderLink.astro';
   }
   .scroll-internal-links a {
     display: none;
-    text-align: center;
   }
   .scroll-internal-links.show {
-    display: block;
+    display: none;
   }
   .scroll-internal-links.show a {
-    display: block;
+    display: none;
   }
 	@media (max-width: 720px) {
     .internal-links {
@@ -100,6 +97,12 @@ import HeaderLink from './HeaderLink.astro';
     }
     nav .menu {
       display: inline-block;
+    }
+    .scroll-internal-links.show {
+      display: block;
+    }
+    .scroll-internal-links.show a {
+      display: block;
     }
 	}
 </style>

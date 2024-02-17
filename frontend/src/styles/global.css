@@ -23,7 +23,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(rgba(229, 233, 240, 50%), #fff) no-repeat;
+	background: linear-gradient(rgba(229, 233, 240, 1), #fff) no-repeat;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -67,10 +67,11 @@ b {
 	font-weight: 700;
 }
 a {
+  text-decoration: none;
 	color: #2337ff;
 }
 a:hover {
-	color: #2337ff;
+	color: #5a5fff;
 }
 p {
 	margin-bottom: 1rem;

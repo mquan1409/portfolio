@@ -17,18 +17,22 @@ const posts = (await getCollection('publication')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 720px;
+        max-width: 100% - 2rem;
 			}
 			ul {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 2rem;
+				gap: 1.5rem;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
 			ul li {
-				width: calc(50% - 1rem);
+        background-color: rgba(153,156,189,0.3);
+        border-radius: 1rem;
+				width: calc(50% - 5rem);
+        padding: 2rem;
 			}
 			ul li * {
 				text-decoration: none;
@@ -54,23 +58,33 @@ const posts = (await getCollection('publication')).sort(
 			}
 			.title {
 				margin: 0;
-				color: rgb(var(--black));
+				color: #2336ff;
 				line-height: 1;
 			}
+      .dark .title {
+        color: #8bc2dd;
+      }
 			.date {
 				margin: 0;
-				color: rgb(var(--gray));
+				color: #2336ff;
+			}
+      .dark .date {
+        color: #8bc2dd;
+      }
+			ul li a:hover h4,
+			ul li a:hover .date {
+				color: #ff5733;
 			}
 			ul li a:hover h4,
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: #5a8ba1;
 			}
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
 			}
 			@media (max-width: 720px) {
 				ul {
-					gap: 0.5em;
+					gap: 1rem;
 				}
 				ul li {
 					width: 100%;
@@ -94,8 +108,8 @@ const posts = (await getCollection('publication')).sort(
 						posts.map((post) => (
 							<li>
 								<a href={`/publication/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
+                  <h5 class="description">{post.data.description}</h5>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>

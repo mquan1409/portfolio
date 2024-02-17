@@ -9,20 +9,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+    .person-link a {
+      color: #daa520;
+    }
+    .person-link a:hover {
+      color: #edd477;
+    }
+    .institution-link a {
+      color: #ff6b6b;
+    }
+    .institution-link a:hover {
+      color: #ff8b8b;
+    }
+    </style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>Hello World!</h1>
-			<p>
+			<h1><a href="/">Hello World!</a></h1>
+			<h5>
       Welcome to my official website!
-			</p>
-			<p>
-        My name is Quan Pham, currently a freshman Master's student at Florida State University.
-			</p>
-			<p>
-        I aspire to build a career in the field of low-level optimizations. I am a research assistant under Dr. David Whalley doing research projects related to low-level optimizations. I have experience in computer architecture modeling using C programming language. Moreover, I am also interested in exploring opportunities in the field of web development as I have had experience in full-stack web dev through many of my projects. I love solving problems, and I am always willing to learn new things.
-			</p>
+			</h5>
+			<h5>
+        My name is <span class="person-link"><a href="/about">Quan Pham</a></span>, currently a freshman Master's student at <span class="institution-link"><a href="https://www.fsu.edu">Florida State University</a></span>.
+			</h5>
+      <h5>
+        I aim to build a career in low-level optimizations. Currently, I'm working as a research assistant for <span class="person-link"><a href="https://www.cs.fsu.edu/~whalley">Dr. David Whalley</a></span> focusing on projects within the field of compiler optimization. My background includes computer architecture modeling with C programming language. Additionally, I also delve into web development, drawing on my experience as a front-end web dev for a homework website for electrical engineering students. Problem-solving energizes me, and I'm always eager to absorb new knowledge.
+      <h5/>
 		</main>
 		<Footer />
 	</body>
