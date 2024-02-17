@@ -30,6 +30,7 @@ body {
 	color: rgb(34, 41, 57);
 	font-size: 20px;
 	line-height: 1.7;
+  min-height: 100vh;
 }
 main {
 	width: 720px;
