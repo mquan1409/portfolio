@@ -1,0 +1,8 @@
+---
+title: 'ToDoList Windows Application'
+description: 'A Windows ToDoList App'
+pubDate: 'Jul 08 2022'
+heroImage: '/blog-placeholder-3.jpg'
+---
+
+Constructed a full-stack, scalable to-do list application by implementing MVVM design pattern using .NET, C#, and some other framework/platforms such as Universal Windows Platform, ASP.NET Core Web API, and Xamarin. Forms.
