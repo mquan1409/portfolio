@@ -1,0 +1,54 @@
+---
+import ThemeIcon from './ThemeIcon.astro';
+---
+<div id="util-bar">
+  <div id="util-padding">
+    <span class="hidden-text">Padding Bar</span>
+  </div>
+  <div id="util-content">
+    <span class="hidden-text">Util Bar</span>
+    <ThemeIcon />
+  </div>
+</div>
+<style>
+  #util-bar {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: calc((100% - 720px)/2 + 3rem);
+    height: 3.5rem;
+    z-index: 2;
+  }
+  #util-bar.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #util-bar #util-padding {
+    height: 100%;
+    width: 12rem;
+    background: linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0.1)) no-repeat;
+  }
+  :global(.dark) #util-bar #util-padding {
+    background: linear-gradient(to left,rgba(68,68,68,1),rgba(68,68,68,0.1)) no-repeat;
+  }
+  #util-bar #util-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+    width: 10rem;
+  }
+  :global(.dark) #util-bar #util-content {
+    background-color: rgb(68,68,68);
+  }
+  #util-bar #util-content #themeToggle {
+    right: 0;
+  }
+  @media (max-width: 720px) {
+    #util-bar {
+      right: 4rem;
+    }
+  }
+</style>

@@ -2,25 +2,31 @@
 const { ...props } = Astro.props;
 ---
 <div class="menu" { ...props }>
-  <span class="line"></span>
-  <span class="line"></span>
-  <span class="line"></span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 6h18M3 12h18M3 18h18"/></svg>
 </div>
 <style>
+  .menu {
+    display: flex;
+    height: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    color: #ff9776;
+    cursor: pointer;
+  }
 
-.menu {
-  padding: 20px 0px 10px 0px;
-  cursor: pointer;
-}
-
-.menu .line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #ff9776;
-}
-:global(.dark) .line {
-  background-color: #663c2f;
-}
-<style/>
+  :global(.dark) .line {
+    background-color: #663c2f;
+  }
+</style>
+<script>
+  let menu = document.querySelector('.menu');
+  console.log(menu);
+  if (menu !== null) {
+    menu.addEventListener('click', () => {
+      let menuLinks = document.querySelector('.scroll-internal-links');
+      if (menuLinks !== null){
+        menuLinks.classList.toggle('show');
+      }
+    });
+  };
+</script>

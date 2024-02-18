@@ -48,9 +48,9 @@ const today = new Date();
 	}
 	.social-links a {
 		text-decoration: none;
-		color: rgb(var(--gray));
+		color: black;
 	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+  :global(.dark) .social-links a {
+    color: white;
+  }
 </style>

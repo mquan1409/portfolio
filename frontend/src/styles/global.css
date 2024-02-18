@@ -23,7 +23,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(rgba(229, 233, 240, 1), #fff) no-repeat;
+	background: linear-gradient(rgba(229, 233, 240, 0.6), #fff) no-repeat;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -116,6 +116,9 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(229, 233, 240);
+}
+.hidden-text {
+  visibility: hidden;
 }
 @media (max-width: 720px) {
 	body {

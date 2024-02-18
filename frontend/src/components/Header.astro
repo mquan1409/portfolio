@@ -1,23 +1,26 @@
 ---
 import ThemeIcon from './ThemeIcon.astro';
 import Menu from './Menu.astro';
+import Util from './Util.astro';
+import UtilBar from './UtilBar.astro';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <header id="header">
-	<nav class="nav-links">
+	<nav class="internal-links">
     <Menu />
-    <div class="internal-links">
+    <div>
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/experience">Experience</HeaderLink>
       <HeaderLink href="/project">Project</HeaderLink>
       <HeaderLink href="/publication">Publication</HeaderLink>
       <a href="/QuanPham_Resume.pdf" download="QuanPham_Resume.pdf">Resume</a>
     </div>
-    <ThemeIcon />
+    <UtilBar />
+    <Util />
 	</nav>
-	<nav class="nav-links">
-    <div class="scroll-internal-links">
+	<nav class="scroll-internal-links">
+    <div>
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/experience">Experience</HeaderLink>
       <HeaderLink href="/project">Project</HeaderLink>
@@ -28,6 +31,9 @@ import HeaderLink from './HeaderLink.astro';
 </header>
 <style>
 	header {
+    position: sticky;
+    height: 3.5rem;
+    width: 100%;
 		margin: 0;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
@@ -42,14 +48,21 @@ import HeaderLink from './HeaderLink.astro';
 		text-decoration: none;
 	}
 	nav {
+    position: sticky;
     width: 720px;
-    max-width: calc(100% - 2em);
+    max-width: calc(100% - 2rem);
     margin: auto;
-    position: relative;
+    position: static;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: left;
 	}
+  nav.internal-links {
+    height: 3.5rem;
+  }
+  nav.scroll-internal-links {
+    max-width: calc(100%);
+  }
   nav #themeToggle {
     margin-left: auto;
   }
@@ -57,11 +70,18 @@ import HeaderLink from './HeaderLink.astro';
     display: none;
   }
 	nav a {
-		padding: 1rem 0.5rem;
+    display: inline-block;
+    height: 1.5rem;
+    line-height: 1.5rem;
 		color: rgb(15, 18, 25);
-    text-align: center;
 		border-bottom: 4px solid transparent;
+    margin-bottom: -4px;
+    padding: 1rem 0.5rem;
+    text-align: center;
 	}
+  nav.scroll-internal-links a {
+    margin-bottom: 0px;
+  }
   nav a:hover {
     border-bottom-color: #8a9dff;
   }
@@ -79,10 +99,12 @@ import HeaderLink from './HeaderLink.astro';
 		border-bottom-color: #fff;
 	}
   .scroll-internal-links{
+    background-color: white;
     width: 100%;
     display: none;
   }
   .scroll-internal-links a {
+    background-color: white;
     display: none;
   }
   .scroll-internal-links.show {
@@ -92,11 +114,11 @@ import HeaderLink from './HeaderLink.astro';
     display: none;
   }
 	@media (max-width: 720px) {
-    .internal-links {
+    .internal-links div {
       display: none;
     }
     nav .menu {
-      display: inline-block;
+      display: flex;
     }
     .scroll-internal-links.show {
       display: block;
@@ -106,14 +128,3 @@ import HeaderLink from './HeaderLink.astro';
     }
 	}
 </style>
-<script>
-  let menu = document.querySelector('.menu');
-  if (menu !== null){
-    menu.addEventListener('click', () => {
-      let menuLinks = document.querySelector('.scroll-internal-links');
-      if (menuLinks !== null){
-        menuLinks.classList.toggle('show');
-      }
-    });
-  };
-</script>

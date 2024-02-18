@@ -1,0 +1,57 @@
+---
+const { ...props } = Astro.props;
+---
+<button id="util-btn" { ...props }>
+  <span class="sr-only">vertical menu</span>
+	<svg class="left-arrow" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="m4.431 12.822l13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645"/></svg>
+</button>
+<script>
+  let element = document.querySelector('#util-btn');
+  if (element !== null) {
+    element.addEventListener('click', () => {
+      let classList = document.querySelector('.left-arrow').classList;
+      if (classList.contains('rotate-up')){
+        classList.remove('rotate-up');
+        classList.add('rotate-down');
+        document.querySelector('#util-bar').classList.toggle('show');
+      }
+      else if (classList.contains('rotate-down')){
+        classList.remove('rotate-down');
+        classList.add('rotate-up');
+        document.querySelector('#util-bar').classList.toggle('show');
+      }
+      else {
+        classList.add('rotate-up');
+        document.querySelector('#util-bar').classList.toggle('show');
+      }
+    });
+  }
+</script>
+<style>
+  @keyframes Rotate
+  {from { transform: rotate(0deg) }
+    to { transform: rotate(-90deg) }
+  }
+  @keyframes RRotate
+  {from { transform: rotate(-90deg) }
+    to { transform: rotate(0deg) }
+  }
+  button {
+    border: 0;
+    background: none;
+    color: rgb(16,18,25);
+    margin-left: auto;
+  }
+  :global(.dark) button {
+    color: rgb(255,255,255);
+  }
+  .rotate-down {
+    animation: Rotate 0.5s forwards;
+  }
+  .rotate-up {
+    animation: RRotate 0.5s forwards;
+  }
+  .left-arrow {
+    display: block;
+  }
+</style>
