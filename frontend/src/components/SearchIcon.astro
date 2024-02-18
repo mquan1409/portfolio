@@ -20,26 +20,16 @@
   }
 </style>
 <script>
-  let element = document.querySelector("#search-btn");
-  if (element !== null) {
-    element.addEventListener('click', () => {
-      let paddingBar = document.querySelector('#util-padding');
-      if (paddingBar !== null) {
-        paddingBar.classList.toggle('show');
-      }
-      let utilBar = document.querySelector('#util-bar');
-      if (utilBar !== null) {
-        utilBar.classList.toggle('expanded-horizontal');
-      }
-      let searchBar = document.querySelector("#search-bar");
-      if (searchBar !== null) {
-        searchBar.classList.toggle('show');
-        element.classList.toggle('show');
-        let inputBar = searchBar.querySelector("#key");
-        if (inputBar !== null) {
-          inputBar.focus();
-        }
-      }
-    });
-  }
+  document.querySelector("#search-btn")?.addEventListener('click', () => {
+    let searchBtn = document.querySelector("#search-btn");
+    searchBtn?.classList.toggle('show');
+    let paddingBar = document.querySelector('#util-padding');
+    paddingBar?.classList.toggle('show');
+    let utilBar = document.querySelector('#util-bar');
+    utilBar?.classList.toggle('expanded-horizontal');
+    let searchBar = document.querySelector("#search-bar");
+    searchBar?.classList.toggle('show');
+    let inputBar = searchBar?.querySelector("#key");
+    (inputBar as HTMLElement)?.focus();
+  });
 </script>

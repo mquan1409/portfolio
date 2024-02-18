@@ -16,3 +16,11 @@
     color: rgb(255,255,255);
   }
 </style>
+<script>
+  document.querySelector("#cancel-search")?.addEventListener('click', () => {
+    document.querySelector("#util-bar")?.classList.toggle("expanded-horizontal");
+    document.querySelector("#search-bar")?.classList.toggle("show");
+    document.querySelector("#search-btn")?.classList.toggle("show");
+    document.querySelector("#util-padding")?.classList.toggle("show");
+  })
+</script>

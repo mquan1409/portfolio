@@ -15,7 +15,7 @@ import SearchBar from './SearchBar.astro'
 <style>
   #util-bar {
     max-width: calc(100% - 5rem);
-    width: 32rem;
+    width: 1.5rem;
     position: absolute;
     display: none;
     top: 0;
@@ -59,6 +59,9 @@ import SearchBar from './SearchBar.astro'
     right: 0;
   }
   @media (max-width: 720px) {
+    #util-padding {
+      width: 0;
+    }
     #util-bar {
       right: 4rem;
     }

@@ -3,11 +3,11 @@ import SearchSubmit from './SearchSubmit.astro'
 import CancelSearch from './CancelSearch.astro'
 ---
 <div id="search-bar">
-  <CancelSearch />
   <form>
     <input type="text" id="key" name="key" />
     <SearchSubmit type="submit"/>
   </form>
+  <CancelSearch />
 </div>
 <style>
   #search-bar {
