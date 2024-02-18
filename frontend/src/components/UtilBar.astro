@@ -1,17 +1,21 @@
 ---
 import ThemeIcon from './ThemeIcon.astro';
+import SearchIcon from './SearchIcon.astro';
+import SearchBar from './SearchBar.astro'
 ---
 <div id="util-bar">
-  <div id="util-padding">
-    <span class="hidden-text">Padding Bar</span>
+  <div id="util-padding" class="show">
   </div>
   <div id="util-content">
-    <span class="hidden-text">Util Bar</span>
+    <SearchBar />
+    <SearchIcon />
     <ThemeIcon />
   </div>
 </div>
 <style>
   #util-bar {
+    max-width: calc(100% - 5rem);
+    width: 32rem;
     position: absolute;
     display: none;
     top: 0;
@@ -19,12 +23,19 @@ import ThemeIcon from './ThemeIcon.astro';
     height: 3.5rem;
     z-index: 2;
   }
+  #util-bar.expanded-horizontal {
+    width: calc(720px - 3rem);
+  }
   #util-bar.show {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   #util-bar #util-padding {
+    display: none;
+  }
+  #util-bar #util-padding.show {
+    display: block;
     height: 100%;
     width: 12rem;
     background: linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0.1)) no-repeat;
@@ -34,11 +45,12 @@ import ThemeIcon from './ThemeIcon.astro';
   }
   #util-bar #util-content {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
+    gap: 0.5rem;
     height: 100%;
     background-color: white;
-    width: 10rem;
+    width: 100%;
   }
   :global(.dark) #util-bar #util-content {
     background-color: rgb(68,68,68);
