@@ -17,4 +17,17 @@
   }
 </style>
 <script>
+  const form = document.getElementById('search-input');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    document.querySelector("#util-bar")?.classList.toggle("expanded-horizontal");
+    document.querySelector("#search-bar")?.classList.toggle("show");
+    document.querySelector("#search-btn")?.classList.toggle("show");
+    document.querySelector("#util-padding")?.classList.toggle("show");
+    if (form !== null) {
+      const formData = new FormData(form as HTMLFormElement);
+      const key = formData.get('key');
+      window.location.replace(window.location.origin + "/tag/" + (key as string)?.toLowerCase());
+    }
+  });
 </script>

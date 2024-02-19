@@ -3,6 +3,7 @@ title: 'Fitness Tracking Web App'
 description: 'A Web App that allows users to shedule their workout sessions'
 pubDate: 'Feb 01 2023'
 heroImage: '/blog-placeholder-3.jpg'
+tags: ["web"]
 ---
 
 Constructed a full-stack fitness tracking web application using HTML, JavaScript, CSS, Python Flask and Firebase that is fully containerized using Docker and hosted on a Digital Ocean instance with 4 other team members.

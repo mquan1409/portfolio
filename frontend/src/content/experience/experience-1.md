@@ -3,6 +3,7 @@ title: 'Learning Assistant'
 description: 'Represent the instructor during weekly office hours to help students reconsolidate their programming knowledge and make progress in the assignments'
 pubDate: 'Aug 22 2022'
 heroImage: '/blog-placeholder-3.jpg'
+tags: ["teaching"]
 ---
 
 Class "Data Structures, Algorithms, and Generic Programming 1 with Professor Christopher Mills": Represent the instructor during weekly office hours to help students reconsolidate their knowledge on Object-Oriented Programming and make progress in the programming assignments

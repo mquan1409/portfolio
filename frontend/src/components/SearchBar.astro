@@ -3,7 +3,7 @@ import SearchSubmit from './SearchSubmit.astro'
 import CancelSearch from './CancelSearch.astro'
 ---
 <div id="search-bar">
-  <form>
+  <form id="search-input">
     <input type="text" id="key" name="key" />
     <SearchSubmit type="submit"/>
   </form>
@@ -29,6 +29,9 @@ import CancelSearch from './CancelSearch.astro'
     align-items: center;
     border: 2px solid blue;
     border-radius: 5px;
+  }
+  :global(.dark) #search-bar form {
+    border: 2px solid white;
   }
   #search-bar form #key {
     font-size: 1rem;
