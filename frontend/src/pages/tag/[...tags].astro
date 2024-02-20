@@ -4,8 +4,9 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 
+/*
 type Props = {
   posts: (CollectionEntry<'project'> | CollectionEntry<'experience'> | CollectionEntry<'publication'>)[]
 };
@@ -23,8 +24,23 @@ export async function getStaticPaths() {
     };
   });
 }
+*/
+export const prerender = false;
+const commonElement = (list1 : string[], list2 : string[]): boolean => {
+  for (let i = 0; i < list1.length; i ++) {
+    if (list2.includes(list1[i]))
+      return true;
+  }
+  return false;
+}
+const { tags } = Astro.params;
+const queryTagsList : string[] = (tags as string).split('/');
+const projects = await getCollection('project');
+const experiences = await getCollection('experience');
+const publications = await getCollection('publication');
+const posts = [...projects,...experiences,...publications];
+let filteredPosts = posts.filter((post) => commonElement(post.data.tags,queryTagsList));
 
-const { posts } = Astro.props;
 ---
 
 <!doctype html>
@@ -121,17 +137,19 @@ const { posts } = Astro.props;
 			<section>
 				<ul>
 					{
-						posts.map((post) => (
-							<li>
-								<a href={`/${post.slug.split('-')[0]}/${post.slug}/`}>
-									<h4 class="title">{post.data.title}</h4>
+            (filteredPosts.length != 0) ?
+            (filteredPosts.map((post) => (
+              <li>
+                <a href={`/${post.slug.split('-')[0]}/${post.slug}/`}>
+                  <h4 class="title">{post.data.title}</h4>
                   <h5 class="description">{post.data.description}</h5>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </a>
+              </li>
+            )))
+            : (<h5>Not matching any skills/experiences</h5>)
 					}
 				</ul>
 			</section>

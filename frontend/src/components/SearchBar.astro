@@ -4,7 +4,7 @@ import CancelSearch from './CancelSearch.astro'
 ---
 <div id="search-bar">
   <form id="search-input">
-    <input type="text" id="key" name="key" />
+    <input type="text" id="key" name="key" placeholder="Type any skill/experience"/>
     <SearchSubmit type="submit"/>
   </form>
   <CancelSearch />
@@ -41,6 +41,14 @@ import CancelSearch from './CancelSearch.astro'
     background: none;
     border: 1px solid transparent;
     padding-left: 0.5rem;
+  }
+  #search-bar form #key::placeholder {
+    font-weight: lighter;
+    opacity: 0.5;
+    color: black;
+  }
+  :global(.dark) #search-bar form #key::placeholder {
+    color: white;
   }
   #search-bar form #key:focus {
     outline: none;

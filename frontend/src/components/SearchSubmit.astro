@@ -27,7 +27,12 @@
     if (form !== null) {
       const formData = new FormData(form as HTMLFormElement);
       const key = formData.get('key');
-      window.location.replace(window.location.origin + "/tag/" + (key as string)?.toLowerCase());
+      if (typeof key === undefined || key === null || key === "")
+        return;
+      else {
+        const keyList : string[] = (key as string).split(/[,\s]+/).map((str) => str.trim().toLowerCase());
+        window.location.replace(window.location.origin + "/tag/" + keyList.join('/'));
+      }
     }
   });
 </script>

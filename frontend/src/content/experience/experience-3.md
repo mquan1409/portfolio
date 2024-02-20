@@ -3,7 +3,7 @@ title: 'Research Assistant'
 description: 'Implement Vectorized Instruction Space (VIS), and implement optimization techniques for SPARC Assembly'
 pubDate: 'May 06 2023'
 heroImage: '/blog-placeholder-3.jpg'
-tags: ["research"]
+tags: ["research","c","cvs","mips","sparc","assembly","vis","cfg"]
 ---
 
 Develop an algorithm to transform MIPS Assembly into Vectorized MIPS Assembly by utilizing C programming language to convert control dependences to data dependences, thus leveraging the advantages of Very Long Instruction Word (VLIW) processor

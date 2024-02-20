@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# netlify functions
+.netlify/
+
 # macOS-specific files
 .DS_Store
 
