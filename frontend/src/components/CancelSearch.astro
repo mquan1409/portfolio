@@ -1,0 +1,26 @@
+---
+---
+<button id="cancel-search">
+	<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.758 17.243L12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243"/></svg>
+</button>
+<style>
+  #cancel-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(16,18,25);
+    border: 0;
+    background: none;
+  }
+  :global(.dark) #cancel-search {
+    color: rgb(255,255,255);
+  }
+</style>
+<script>
+  document.querySelector("#cancel-search")?.addEventListener('click', () => {
+    document.querySelector("#util-bar")?.classList.toggle("expanded-horizontal");
+    document.querySelector("#search-bar")?.classList.toggle("show");
+    document.querySelector("#search-btn")?.classList.toggle("show");
+    document.querySelector("#util-padding")?.classList.toggle("show");
+  })
+</script>

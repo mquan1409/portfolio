@@ -6,35 +6,24 @@ const { ...props } = Astro.props;
 	<svg class="left-arrow" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="m4.431 12.822l13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645"/></svg>
 </button>
 <script>
-  let element = document.querySelector('#util-btn');
-  if (element !== null) {
-    element.addEventListener('click', () => {
-      let leftArrowBtn = document.querySelector('.left-arrow');
-      if (leftArrowBtn !== null) {
-        let classList = leftArrowBtn.classList;
-        if (classList.contains('rotate-up')){
-          classList.remove('rotate-up');
-          classList.add('rotate-down');
-          let utilBar = document.querySelector('#util-bar');
-          if (utilBar !== null)
-            utilBar.classList.toggle('show');
-        }
-        else if (classList.contains('rotate-down')){
-          classList.remove('rotate-down');
-          classList.add('rotate-up');
-          let utilBar = document.querySelector('#util-bar');
-          if (utilBar !== null)
-            utilBar.classList.toggle('show');
-        }
-        else {
-          classList.add('rotate-up');
-          let utilBar = document.querySelector('#util-bar');
-          if (utilBar !== null)
-            utilBar.classList.toggle('show');
-        }
-      }
-    });
-  }
+  document.querySelector('#util-btn')?.addEventListener('click', () => {
+    let leftArrowBtn = document.querySelector('.left-arrow');
+    let classList = leftArrowBtn?.classList;
+    if (classList?.contains('rotate-up')){
+      classList?.remove('rotate-up');
+      classList?.add('rotate-down');
+      document.querySelector('#util-bar')?.classList.toggle('show');
+    }
+    else if (classList?.contains('rotate-down')){
+      classList?.remove('rotate-down');
+      classList?.add('rotate-up');
+      document.querySelector('#util-bar')?.classList.toggle('show');
+    }
+    else {
+      classList?.add('rotate-up');
+      document.querySelector('#util-bar')?.classList.toggle('show');
+    }
+  });
 </script>
 <style>
   @keyframes Rotate
@@ -51,14 +40,20 @@ const { ...props } = Astro.props;
     color: rgb(16,18,25);
     margin-left: auto;
   }
+  button:hover {
+    color: rgb(16,18,25,0.6);
+  }
   :global(.dark) button {
     color: rgb(255,255,255);
   }
+  :global(.dark) button:hover {
+    color: rgb(255,255,255,0.6);
+  }
   .rotate-down {
-    animation: Rotate 0.5s forwards;
+    animation: Rotate 0.3s forwards;
   }
   .rotate-up {
-    animation: RRotate 0.5s forwards;
+    animation: RRotate 0.3s forwards;
   }
   .left-arrow {
     display: block;

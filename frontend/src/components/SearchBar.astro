@@ -1,0 +1,58 @@
+---
+import SearchSubmit from './SearchSubmit.astro'
+import CancelSearch from './CancelSearch.astro'
+---
+<div id="search-bar">
+  <form id="search-input">
+    <input type="text" id="key" name="key" placeholder="Type any skill/experience"/>
+    <SearchSubmit type="submit"/>
+  </form>
+  <CancelSearch />
+</div>
+<style>
+  #search-bar {
+    display: none;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid transparent;
+  }
+  #search-bar.show {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  #search-bar form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border: 2px solid blue;
+    border-radius: 5px;
+  }
+  :global(.dark) #search-bar form {
+    border: 2px solid white;
+  }
+  #search-bar form #key {
+    font-size: 1rem;
+    color: inherit;
+    height: calc(100% - 0.3rem);
+    width: 100%;
+    background: none;
+    border: 1px solid transparent;
+    padding-left: 0.5rem;
+  }
+  #search-bar form #key::placeholder {
+    font-weight: lighter;
+    opacity: 0.5;
+    color: black;
+  }
+  :global(.dark) #search-bar form #key::placeholder {
+    color: white;
+  }
+  #search-bar form #key:focus {
+    outline: none;
+  }
+</style>
+<script>
+</script>
