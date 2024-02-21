@@ -1,4 +1,7 @@
-# portfolio
+# Quan Pham Portfolio
+This platform is more than just a showcase; it's a comprehensive collection of my professional skills and a chronicle of my growth in the tech field!
+I have also equipped this site with Static-Site-Generation (SSG) capability for speedy loading of the main content, along with Server-Side-Rendering (SSR) capability for an efficient, on-the-fly generation of content during searches.
+
 This project uses Astro web framework
 
 The design of this website is partly based off of https://github.com/withastro/astro/tree/main/examples/blog
